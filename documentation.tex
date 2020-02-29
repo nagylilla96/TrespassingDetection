@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\title{Trespassing Detection}
+\author{Aditya Nikhil, Ahmed Hasan, Amardeep Singh, Jane Pham, \\ Lilla Nagy, Nyandwi Jean de Dieu, Raamkishore P, Saikat Pandit}
+\date{February 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\quad Trepassing detection is an app using OpenVINO pretrained model to detect human presence in a certain area. The model is built as a security tool to keep track of individuals who enter given premises, such as high security areas and rooms accessible only to specific personnel. Security and privacy in such matters has become quite important in order to prevent the incidence of unwanted actions such as thefts, property damage and much more.
+
+The following model first tracks the movement and presence of individuals in the area and creates a registry at the backend. The backend is filled with details of authorized individuals who are allowed access to the area. At any point, if an unauthorized individual enters the premises, the model takes details of the same and alerts security about a possible breach in, by sending an e-mail to the user with an attached picture. In order to build the model, a dummy dataset with confidence percentage of people is created and fed into an existing OpenVino model for face and body detection.
+
+Data for the same is contained in an xml file.
+
+
+\section{Model Training}
+
+\section{Set Up Edge Device}
+
+\subsection{Hardware Requirements}
+
+\begin{enumerate}
+    \item Raspberry Pi 3b + or higher 
+    \item Intel NC2 
+    \item Pi Camera 
+    \item Charger
+    \item Keyboard, mouse, screen monitor for the initial setup
+    \item Optional: cases, heatsink, fan, etc.
+\end{enumerate}
+
+\subsection{Software Setup}
+
+\subsubsection{Setting up the Raspberry and install the OS and python}
+
+\begin{itemize}
+    \item Follow this guide to setup the OS: \hyperlink{https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up}{https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up}
+    \item Update the software using sudo apt get or yum install (depends on the OS)
+    \item Install Python 3
+    \item Optional: setup ssh to monitor your device remotely
+\end{itemize}
+
+\subsubsection{Setup Openvino enviroment for ML and computer vision}
+
+\begin{itemize}
+    \item follow this guide to install OpenVino on Pi: \href{https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_raspbian.html}{https://docs.openvinotoolkit.org} 
+\end{itemize}
+
+\subsubsection{Ultilize Intel NC2 and start the model training}
+
+\begin{itemize}
+    \item install cmake using \\ \texttt{\$ sudo apt-get install cmake}
+\end{itemize}
+
+\section{Results}
+
+\end{document}
