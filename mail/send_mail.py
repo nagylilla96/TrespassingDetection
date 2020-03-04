@@ -1,14 +1,18 @@
 import smtplib
+import time
+import datetime
 from os.path import basename
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 
+ts = time.time()
+st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d, %H:%M:%S')
 PASSWORD = "bbbqgfvkvpavrrwb" # This is the gmail App Password
 OUR_MAIL = "trespassing.detection@gmail.com"
 SUBJECT = "Trespasser Detected!"
-MESSAGE = ("Hi!\n\nA trespasser has been detected in your area. "
+MESSAGE = ("Hi!\n\nA trespasser has been detected in your area at " + st + ". "
     "You can find an image with the tresspasser in the attachments!"
     "\n\nStay safe,\nTresspassing Detection Team")
 
